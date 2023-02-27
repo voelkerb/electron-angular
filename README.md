@@ -2,6 +2,22 @@
 Create beautiful one page desktop apps with Electron and Angular for Windows, macOS, Linux and Web from a single code base.
 
 
+## Resulting app on different platforms
+
+### Windows
+<p align="center">
+<img src="docu/screenshots/windows_page1.png" width="50%">
+</p>
+
+### macOS
+<p align="center">
+<img src="docu/screenshots/macOS_settings.png" width="50%">
+</p>
+
+### Web
+<p align="center">
+<img src="docu/screenshots/web_settings.png" width="50%">
+</p>
 
 ## Project structure
 
