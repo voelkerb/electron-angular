@@ -16,7 +16,7 @@ Create beautiful one page desktop apps with Electron and Angular for Windows, ma
 
 ### Web
 <p align="center">
-<img src="docu/screenshots/web_settings.png" width="50%">
+<img src="docu/screenshots/web_settings.png" width="90%">
 </p>
 
 ## Project structure
