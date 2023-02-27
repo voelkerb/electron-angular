@@ -49,7 +49,7 @@ $app-theme-light: mat-set-background($app-theme-light, $bg-color-light);
     --main-color: mat.get-color-from-palette($app-primary-light, 500);
     --toolbar-height: 40px;
     --add-toolbar-height: 6px;
-    --add-toolbar-height-mac: 20px;
+    --add-toolbar-height-mac: 18px;
     --standard-margin: 8px;
 }
 

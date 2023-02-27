@@ -52,16 +52,16 @@ export class AppNavigationBarComponent implements OnInit {
             document.body.classList.remove('maximized');
             console.log("unmaximized");
         });
-        // If not windows, hide controls
-        if (!this.electronHelper.isWindows) this.hideWindowsControls();
-        // If maxOS, increase navbar height s.t. window buttons are not inside view
-        if (this.electronHelper.isMacOS) this.addExtraDragBar();
     }
 
     ngAfterViewInit(): void {
         // Get overlay of theme button
         const el = (this.themeButtonComponent.nativeElement as Element).querySelector('.mat-button-focus-overlay');
         if(el) this.overlayEl=el;
+
+        // If not windows, hide controls
+        // If maxOS, increase navbar height s.t. window buttons are not inside view
+        if (this.electronHelper.isMacOS) this.addExtraDragBar();
     }
 
     changeTheme(event) {
@@ -102,11 +102,7 @@ export class AppNavigationBarComponent implements OnInit {
         this.ipc.send('actionClose');
     }
 
-    
-    hideWindowsControls() {
-        var div = document.getElementById('windows-controls');
-        div.style.display = 'none';
-    }
+
 
 
     addExtraDragBar() {
