@@ -1,0 +1,25 @@
+{
+    "ACTIONS": {
+        "STORE": "Sichern",
+        "LOAD": "Laden",
+        "SAVE": "Speichern",
+        "CONFIRM": "Bestätigen",
+        "REVERT": "Zurücksetzen",
+        "COLLAPSE_ALL": "Alle schließen",
+        "EXPAND_ALL": "Alle anzeigen",
+        "CANCEL": "Abbrechen",
+        "RESET": "Zurücksetzen"
+    },
+    "SETTINGS": {
+        "TITLE": "Einstellungen",
+        "LANGUAGE": "Sprache"
+    },
+    "PAGE1": {
+        "TITLE": "Seite 1"
+    },
+    "THEMES": {
+        "LIGHT": "Helles Theme",
+        "DARK": "Dunkles Theme",
+        "CUSTOM": "Custom Theme"
+    }
+}

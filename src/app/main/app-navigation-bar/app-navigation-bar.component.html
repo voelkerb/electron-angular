@@ -1,0 +1,64 @@
+<mat-toolbar color="primary" role="toolbar" #toolbar>
+
+    <mat-toolbar-row class="dragBarTop">
+    </mat-toolbar-row>
+    <mat-toolbar-row class="navBar">
+
+        <button class="sideBarToggler" mat-icon-button (click)="dummy()">
+
+            <mat-icon>home</mat-icon>
+        </button>
+
+        <span class="flex-spacer"></span>
+
+        <nav mat-tab-nav-bar color="accent" backgroundColor="primary">
+            <a mat-tab-link *ngFor="let link of navLinks" routerLink="{{link.path}}" routerLinkActive
+                #rla="routerLinkActive" mat-tab-link [active]="rla.isActive">
+                <mat-icon class="tab-icon">
+                    {{link.icon}}
+                </mat-icon>
+                <span class="mat-tab-text" fxShow="false" fxShow.gt-sm="true">
+                    {{link.label | translate }}
+                </span>
+            </a>
+        </nav>
+
+        <span class="flex-spacer"></span>
+        <button #themeButton class="theme-button" type="button" mat-icon-button color="accent"
+            (click)="themeSelect.open()" (focus)="addOverlay()">
+            <mat-icon>palette</mat-icon>
+            <mat-select #themeSelect [formControl]="curTheme" (closed)="removeOverlay()" (selectionChange)="changeTheme($event.value)">
+                <mat-option *ngFor="let theme of themes" [value]="theme.id">
+                    {{ theme.name | translate }}
+                </mat-option>
+            </mat-select>
+        </button>
+
+
+        <mat-divider class="vertDivider" fxShow="false" fxShow.gt-xs="true" vertical></mat-divider>
+        <button mat-icon-button (click)="dummy()">
+
+            <mat-icon [matBadge]="3" matBadgeSize="small" matBadgeColor="warn" matBadgeOverlap="true"
+                matBadgePosition="after">notifications</mat-icon>
+        </button>
+        <mat-divider *ngIf="electronHelper.isElectron && electronHelper.isWindows" class="vertDivider" fxShow="false"
+            fxShow.gt-xs="true" vertical></mat-divider>
+
+        <div *ngIf="electronHelper.isElectron && electronHelper.isWindows" id="windows-controls">
+            <div class="button" id="min-button" (click)="windowsMinBtnClicked()">
+                <img class="icon" srcset="./assets/icons/win/min-w-10.png 1x, ./assets/icons/win/min-w-12.png 1.25x, ./assets/icons/win/min-w-15.png 1.5x, ./assets/icons/win/min-w-15.png 1.75x, ./assets/icons/win/min-w-20.png 2x, ./assets/icons/win/min-w-20.png 2.25x, ./assets/icons/win/min-w-24.png 2.5x, ./assets/icons/win/min-w-30.png 3x, ./assets/icons/win/min-w-30.png 3.5x" draggable="false" />
+            </div>
+            <div class="button" id="max-button" (click)="windowsMaxBtnClicked()">
+                <img class="icon" srcset="./assets/icons/win/max-w-10.png 1x, ./assets/icons/win/max-w-12.png 1.25x, ./assets/icons/win/max-w-15.png 1.5x, ./assets/icons/win/max-w-15.png 1.75x, ./assets/icons/win/max-w-20.png 2x, ./assets/icons/win/max-w-20.png 2.25x, ./assets/icons/win/max-w-24.png 2.5x, ./assets/icons/win/max-w-30.png 3x, ./assets/icons/win/max-w-30.png 3.5x" draggable="false" />
+            </div>
+            <div class="button" id="restore-button" (click)="windowsRestoreBtnClicked()">
+                <img class="icon" srcset="./assets/icons/win/restore-w-10.png 1x, ./assets/icons/win/restore-w-12.png 1.25x, ./assets/icons/win/restore-w-15.png 1.5x, ./assets/icons/win/restore-w-15.png 1.75x, ./assets/icons/win/restore-w-20.png 2x, ./assets/icons/win/restore-w-20.png 2.25x, ./assets/icons/win/restore-w-24.png 2.5x, ./assets/icons/win/restore-w-30.png 3x, ./assets/icons/win/restore-w-30.png 3.5x" draggable="false" />
+            </div>
+            <div class="button" id="close-button" (click)="windowsCloseBtnClicked()">
+                <img class="icon" srcset="./assets/icons/win/close-w-10.png 1x, ./assets/icons/win/close-w-12.png 1.25x, ./assets/icons/win/close-w-15.png 1.5x, ./assets/icons/win/close-w-15.png 1.75x, ./assets/icons/win/close-w-20.png 2x, ./assets/icons/win/close-w-20.png 2.25x, ./assets/icons/win/close-w-24.png 2.5x, ./assets/icons/win/close-w-30.png 3x, ./assets/icons/win/close-w-30.png 3.5x" draggable="false" />
+            </div>
+        </div>
+        <div [class.rightSpacer]="electronHelper.isElectron && electronHelper.isWindows"></div>
+
+    </mat-toolbar-row>
+</mat-toolbar>

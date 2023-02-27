@@ -1,0 +1,19 @@
+<div *ngIf="!hidden" class="container full-screen-wrapper mat-app-background">
+
+    <div class="background mat-app-background">
+    </div>
+    <div class="content" >
+
+        <div class="row">
+            <mat-progress-bar class="progressIndicator item" color="primary" mode="buffer" [value]="percent"
+                [bufferValue]="0">
+            </mat-progress-bar>
+        </div>
+
+        <div class="row">
+            <h2 *ngIf="message.text.length > 0" class="progressText">
+                {{ message.text | translate:message.param }}
+            </h2>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "name": "your-app-name",
+    "version": "0.0.1",
+    "description": "<your app description>",
+    "author": {
+        "name": "You",
+        "email": "you_or@me.com"
+    },
+    "main": "main.js",
+    "private": true,
+    "dependencies": {
+    }
+}

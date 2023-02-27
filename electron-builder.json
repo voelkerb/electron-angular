@@ -1,0 +1,35 @@
+{
+  "asar": true,
+  "directories": {
+    "output": "release/"
+  },
+  "files": [
+    "**/*",
+    "!**/*.ts",
+    "!*.map",
+    "!package.json",
+    "!package-lock.json",
+    {
+      "from": "../dist",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "icon": "dist/assets/icons/favicon.ico",
+    "target": [
+      "portable","nsis"
+    ]
+  },
+  "mac": {
+    "icon": "dist/assets/icons/favicon.png",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist/assets/icons",
+    "target": [
+      "AppImage"
+    ]
+  }
+}

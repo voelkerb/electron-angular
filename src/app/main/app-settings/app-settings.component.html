@@ -1,0 +1,12 @@
+<div class="container">
+    <form [formGroup]="settingsForm">
+        <mat-form-field appearance="fill" hideRequiredMarker>
+            <mat-label>{{'SETTINGS.LANGUAGE' | translate}}</mat-label>
+            <mat-select formControlName="language" >
+                <mat-option *ngFor="let language of languages | keyvalue" [value]="language.key">
+                    {{language.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>

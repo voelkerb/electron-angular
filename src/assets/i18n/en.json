@@ -1,0 +1,25 @@
+{
+    "ACTIONS": {
+        "STORE": "Store",
+        "LOAD": "Load",
+        "SAVE": "Save",
+        "CONFIRM": "Confirm",
+        "REVERT": "Revert",
+        "COLLAPSE_ALL": "Collapse all",
+        "EXPAND_ALL": "Expand all",
+        "CANCEL": "Cancel",
+        "RESET": "Reset"
+    },
+    "SETTINGS": {
+        "TITLE": "Settings",
+        "LANGUAGE": "Language"
+    },
+    "PAGE1": {
+        "TITLE": "Page 1"
+    },
+    "THEMES": {
+        "LIGHT": "Light theme",
+        "DARK": "Dark theme",
+        "CUSTOM": "Custom theme"
+    }
+}
