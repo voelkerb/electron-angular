@@ -7,11 +7,11 @@ let win: BrowserWindow = null;
 const args = process.argv.slice(1),
 serve = args.some(val => val === '--serve');
 
-let pathIndex = './'; // index.html';
+let pathIndex = './';
         
 if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
     // Path when running electron in local folder
-    pathIndex = '../dist/';//index.html';
+    pathIndex = '../dist/';
 }
 
 
@@ -23,22 +23,16 @@ function createWindow(): BrowserWindow {
     win = new BrowserWindow({
         x: 0,
         y: 0,
-        minWidth: 1024,
-        minHeight: 768,
+        minWidth: 500,
+        minHeight: 200,
         width: size.width,
         height: size.height,
-        autoHideMenuBar: true, // <<< here
+        autoHideMenuBar: true,
         titleBarStyle: 'hidden',
-        // transparent: true,
-        // frame: false,
-        // titleBarOverlay: {
-            //     height: 38
-            // },
             webPreferences: {
             devTools: !app.isPackaged,
             nodeIntegration: true,
-            // allowRunningInsecureContent: (serve),
-            contextIsolation: false,  // false if you want to run e2e test with Spectron
+            contextIsolation: false,
         },
     });
 
@@ -133,7 +127,7 @@ try {
 
 } catch (e) {
     // Catch Error
-    // throw e;
+    throw e;
 }
 
 
@@ -158,39 +152,3 @@ ipc.on('actionClose', function(event, data){
     if (win !== null) win.close(); 
 });
 
-
-// import { ipcMain, IpcMessageEvent } from 'electron';
-
-// const { SerialPort } = require('serialport')
-// const { ReadlineParser } = require('@serialport/parser-readline')
-
-
-// const port = new SerialPort({
-//   path: '/dev/tty.SLAB_USBtoUART', 
-//   baudRate: 115200
-// }, function (err) {
-//   if (err) {
-//     return console.log('Error: ', err.message)
-//   }
-// });
-
-// const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
-// parser.on('data', function(data) {
-//   console.log("Serialport Rcv: ", data);
-//   if (win.webContents) win.webContents.send('SP_NL', data);
-// });
-
-
-// ipcMain.on('ping', function (event,data) {
-//   event.sender.send('pong', 'data');
-
-//   console.log(data);
-
-//   let mydata = " hello \n"
-//   port.write( mydata, function(err) {
-//     if (err) {
-//         return console.log('Error on write: ', err.message);
-//     }
-//     console.log('message written');
-//   });
-// });
