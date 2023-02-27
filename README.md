@@ -11,7 +11,7 @@ Create beautiful one page desktop apps with Electron and Angular for Windows, ma
 
 ### macOS
 <p align="center">
-<img src="docu/screenshots/macOS_settings.png" width="90%">
+<img src="docu/screenshots/macOS_page1.png" width="90%">
 </p>
 
 ### Web
