@@ -1,5 +1,6 @@
 {
     "ACTIONS": {
+        "OK": "Ok",
         "STORE": "Sichern",
         "LOAD": "Laden",
         "SAVE": "Speichern",
@@ -15,11 +16,21 @@
         "LANGUAGE": "Sprache"
     },
     "PAGE1": {
-        "TITLE": "Seite 1"
+        "TITLE": "Seite 1",
+        "TEST": "Seite 1 funktioniert"
     },
     "THEMES": {
         "LIGHT": "Helles Theme",
         "DARK": "Dunkles Theme",
         "CUSTOM": "Custom Theme"
+    },
+    "ERRORS": {
+        "CANNOT_CONNECT": "DEMO Fehler: Verbindung nicht möglich"
+    },
+    "WARNING": {
+        "MSG_TOO_LONG": "DEMO Warnung: Nachricht ist zu lang"
+    },
+    "INFO": {
+        "APPLE": "DEMO Info: An apple a day keeps Windows away"
     }
 }

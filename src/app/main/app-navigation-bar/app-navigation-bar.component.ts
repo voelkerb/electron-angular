@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 import { IpcService } from 'app/services/ipc.service';
+import { NotificationHandlerService } from 'app/services/notification-handler.service';
 import { ElectronService } from '../../core/services';
 import { AppSettingsService } from '../../services/app-settings.service';
 
@@ -33,6 +35,8 @@ export class AppNavigationBarComponent implements OnInit {
 
     constructor(private settings: AppSettingsService,
         public electronHelper: ElectronService,
+        private notify: NotificationHandlerService,
+        private translate: TranslateService,
         private ipc: IpcService) { }
 
     ngOnInit(): void {
@@ -72,8 +76,14 @@ export class AppNavigationBarComponent implements OnInit {
         this.overlayEl.classList.add('mat-button-focus-overlay')
     }
 
-    dummy() {
-        console.log("dummy clicked")
+    dummyError() {
+        this.notify.showErrorNotification(this.translate.instant('ERRORS.CANNOT_CONNECT'), {text:this.translate.instant('ACTIONS.OK')}, 3000)
+    }
+    dummyWarning() {
+        this.notify.showWarningNotification(this.translate.instant('WARNING.MSG_TOO_LONG'), {text:this.translate.instant('ACTIONS.OK')}, 3000)
+    }
+    dummyInfo() {
+        this.notify.showInfoNotification(this.translate.instant('INFO.APPLE'), {text:this.translate.instant('ACTIONS.CONFIRM')}, 3000)
     }
     
     windowsMinBtnClicked() {

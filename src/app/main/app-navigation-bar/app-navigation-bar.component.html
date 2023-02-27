@@ -4,7 +4,7 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="navBar">
 
-        <button class="sideBarToggler" mat-icon-button (click)="dummy()">
+        <button class="sideBarToggler" mat-icon-button (click)="dummyError()">
 
             <mat-icon>home</mat-icon>
         </button>
@@ -36,7 +36,7 @@
 
 
         <mat-divider class="vertDivider" fxShow="false" fxShow.gt-xs="true" vertical></mat-divider>
-        <button mat-icon-button (click)="dummy()">
+        <button mat-icon-button (click)="dummyInfo()">
 
             <mat-icon [matBadge]="3" matBadgeSize="small" matBadgeColor="warn" matBadgeOverlap="true"
                 matBadgePosition="after">notifications</mat-icon>

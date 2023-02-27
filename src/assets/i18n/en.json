@@ -1,5 +1,6 @@
 {
     "ACTIONS": {
+        "OK": "Ok",
         "STORE": "Store",
         "LOAD": "Load",
         "SAVE": "Save",
@@ -15,11 +16,21 @@
         "LANGUAGE": "Language"
     },
     "PAGE1": {
-        "TITLE": "Page 1"
+        "TITLE": "Page 1",
+        "TEST": "Page 1 works"
     },
     "THEMES": {
         "LIGHT": "Light theme",
         "DARK": "Dark theme",
         "CUSTOM": "Custom theme"
+    },
+    "ERRORS": {
+        "CANNOT_CONNECT": "DEMO Error: Cannot connect to your target"
+    },
+    "WARNING": {
+        "MSG_TOO_LONG": "DEMO Warning: Message is too long to be processed"
+    },
+    "INFO": {
+        "APPLE": "DEMO Info: An apple a day keeps Windows away"
     }
 }
