@@ -49,6 +49,7 @@ npm install
 *Install NodeJS dependencies with npm (used by Electron main process):*
 
 ``` bash
+cd app
 npm install
 ```
 
